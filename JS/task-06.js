@@ -33,7 +33,7 @@ function verifyLengthOfInput(event) {
     if (event.currentTarget.dataset.length != event.currentTarget.value.length) inputRef.classList.add('invalid');
     
     else {
-        inputRef.classList.remove('invalid')
-        inputRef.classList.add('valid')
+        inputRef.classList.remove('invalid');
+        inputRef.classList.add('valid');
     }
 };
