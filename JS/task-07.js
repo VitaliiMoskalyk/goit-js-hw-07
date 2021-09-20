@@ -9,5 +9,6 @@ const textRef = document.querySelector('span');
 inputRef.addEventListener('input',changing);
 
 function changing() {
-    textRef.style.fontSize = `${inputRef.value}px`;
+    
+    textRef.style.fontSize = `${inputRef.value*0.32}px`;
 };

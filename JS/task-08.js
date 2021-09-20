@@ -26,15 +26,15 @@ destroyRef.addEventListener('click',removeNumber)
 
 //получаю введенное число и сразу вызываю ф-ию создания коробок
 function getNumber() {
-    renderRef.removeEventListener('click', getNumber);
+    //renderRef.removeEventListener('click', getNumber);
     Number(inputRef.value) <= 100 && Number(inputRef.value) > 0 ? inputRef.value : inputRef.value = '';
     createBoxes();
 };
 
-
+let startPx = 30;
 //создаю коробки с размерами и случайными цветами
 function createBoxes() {
-    let startPx = 30;
+    
 for (let i = 0; i < Number(inputRef.value); i++){
     let el = document.createElement('div');
     
@@ -44,7 +44,9 @@ for (let i = 0; i < Number(inputRef.value); i++){
     el.style.backgroundColor ='#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
     
     boxesRef.append(el);
+    
     };
+    return inputRef.value = '';
 };
 
 
@@ -53,7 +55,7 @@ for (let i = 0; i < Number(inputRef.value); i++){
 function removeNumber() {
     renderRef.addEventListener('click', getNumber);
     destroyBoxes();
-    return inputRef.value = '';
+
 };
 
 //удаление коробок и перезагрузка страницы
