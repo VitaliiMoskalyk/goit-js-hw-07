@@ -6,6 +6,7 @@
 const inputRef = document.querySelector('#name-input');
 const outputRef = document.querySelector('#name-output');
 
+inputRef.addEventListener('input',changeOutputName);
 
 function changeOutputName(event) {
     if (event.currentTarget.value) outputRef.textContent=event.currentTarget.value;
@@ -13,4 +14,3 @@ function changeOutputName(event) {
 };
 
 
-inputRef.addEventListener('input',changeOutputName)
