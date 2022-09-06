@@ -4,30 +4,27 @@
 // document.createElement().
 
 const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
+  "Картошка",
+  "Грибы",
+  "Чеснок",
+  "Помидоры",
+  "Зелень",
+  "Приправы",
 ];
 
 //получаю доступ к узлу <ul>
-const ulElement = document.querySelector('#ingredients');
+const ulElement = document.getElementById("ingredients");
 
 //Создаю ф-ию для создания <li> элемент массива </li>
 function createTagsAndStrings(array) {
   const arrayOfTags = [];
-
-  array.forEach(element => {
-  const liTag= document.createElement('li');
-  liTag.textContent = element;
-  arrayOfTags.push(liTag);
+  array.forEach(function (element) {
+    const liTag = document.createElement("li");
+    liTag.textContent = element;
+    arrayOfTags.push(liTag);
   });
-  
-   return arrayOfTags;
-};
-
+  return arrayOfTags;
+}
 
 //Присоединяю все <li>-шки к <ul>
-ulElement.append(...createTagsAndStrings(ingredients));
+ulElement !== null && ulElement.append(...createTagsAndStrings(ingredients));
